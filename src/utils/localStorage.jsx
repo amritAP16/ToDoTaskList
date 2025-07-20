@@ -1,8 +1,15 @@
 const employees = [
   {
     id: 1,
+    firstName: "Aarav",
     email: "employee1@example.com",
     password: "123",
+    taskCounts: {
+      active: 1,
+      newTask: 1,
+      completed: 1,
+      failed: 1
+    },
     tasks: [
       {
         title: "Build login page",
@@ -12,7 +19,8 @@ const employees = [
         active: true,
         newTask: true,
         completed: false,
-        failed: false
+        failed: false,
+        priority: "high"
       },
       {
         title: "Fix navbar issue",
@@ -22,7 +30,8 @@ const employees = [
         active: false,
         newTask: false,
         completed: true,
-        failed: false
+        failed: false,
+        priority: "medium"
       },
       {
         title: "Write unit tests",
@@ -32,14 +41,22 @@ const employees = [
         active: false,
         newTask: false,
         completed: false,
-        failed: true
+        failed: true,
+        priority: "low"
       }
     ]
   },
   {
     id: 2,
+    firstName: "Priya",
     email: "employee2@example.com",
     password: "123",
+    taskCounts: {
+      active: 2,
+      newTask: 1,
+      completed: 1,
+      failed: 1
+    },
     tasks: [
       {
         title: "Design homepage layout",
@@ -49,7 +66,8 @@ const employees = [
         active: true,
         newTask: true,
         completed: false,
-        failed: false
+        failed: false,
+        priority: "high"
       },
       {
         title: "Update branding",
@@ -59,7 +77,8 @@ const employees = [
         active: false,
         newTask: false,
         completed: true,
-        failed: false
+        failed: false,
+        priority: "medium"
       },
       {
         title: "Design error page",
@@ -69,7 +88,8 @@ const employees = [
         active: false,
         newTask: false,
         completed: false,
-        failed: true
+        failed: true,
+        priority: "low"
       },
       {
         title: "Review UX feedback",
@@ -79,14 +99,22 @@ const employees = [
         active: true,
         newTask: false,
         completed: false,
-        failed: false
+        failed: false,
+        priority: "medium"
       }
     ]
   },
   {
     id: 3,
+    firstName: "Rahul",
     email: "employee3@example.com",
     password: "123",
+    taskCounts: {
+      active: 2,
+      newTask: 1,
+      completed: 2,
+      failed: 1
+    },
     tasks: [
       {
         title: "API Integration",
@@ -96,7 +124,8 @@ const employees = [
         active: true,
         newTask: true,
         completed: false,
-        failed: false
+        failed: false,
+        priority: "high"
       },
       {
         title: "Bug Fixing",
@@ -106,7 +135,8 @@ const employees = [
         active: false,
         newTask: false,
         completed: true,
-        failed: false
+        failed: false,
+        priority: "medium"
       },
       {
         title: "Database Cleanup",
@@ -116,7 +146,8 @@ const employees = [
         active: false,
         newTask: false,
         completed: false,
-        failed: true
+        failed: true,
+        priority: "low"
       },
       {
         title: "Refactor routes",
@@ -126,7 +157,8 @@ const employees = [
         active: true,
         newTask: false,
         completed: false,
-        failed: false
+        failed: false,
+        priority: "high"
       },
       {
         title: "Performance audit",
@@ -136,14 +168,22 @@ const employees = [
         active: false,
         newTask: false,
         completed: true,
-        failed: false
+        failed: false,
+        priority: "medium"
       }
     ]
   },
   {
     id: 4,
+    firstName: "Sneha",
     email: "employee4@example.com",
     password: "123",
+    taskCounts: {
+      active: 1,
+      newTask: 1,
+      completed: 1,
+      failed: 1
+    },
     tasks: [
       {
         title: "Client meeting",
@@ -153,7 +193,8 @@ const employees = [
         active: true,
         newTask: true,
         completed: false,
-        failed: false
+        failed: false,
+        priority: "high"
       },
       {
         title: "Prepare presentation",
@@ -163,7 +204,8 @@ const employees = [
         active: false,
         newTask: false,
         completed: true,
-        failed: false
+        failed: false,
+        priority: "medium"
       },
       {
         title: "Follow up email",
@@ -173,14 +215,22 @@ const employees = [
         active: false,
         newTask: false,
         completed: false,
-        failed: true
+        failed: true,
+        priority: "low"
       }
     ]
   },
   {
     id: 5,
+    firstName: "Vikram",
     email: "employee5@example.com",
     password: "123",
+    taskCounts: {
+      active: 2,
+      newTask: 1,
+      completed: 1,
+      failed: 1
+    },
     tasks: [
       {
         title: "Set up CI/CD",
@@ -190,7 +240,8 @@ const employees = [
         active: true,
         newTask: true,
         completed: false,
-        failed: false
+        failed: false,
+        priority: "high"
       },
       {
         title: "Dockerize app",
@@ -200,7 +251,8 @@ const employees = [
         active: false,
         newTask: false,
         completed: true,
-        failed: false
+        failed: false,
+        priority: "medium"
       },
       {
         title: "Server health check",
@@ -210,7 +262,8 @@ const employees = [
         active: false,
         newTask: false,
         completed: false,
-        failed: true
+        failed: true,
+        priority: "low"
       },
       {
         title: "Log rotation",
@@ -220,7 +273,8 @@ const employees = [
         active: true,
         newTask: false,
         completed: false,
-        failed: false
+        failed: false,
+        priority: "high"
       }
     ]
   }
@@ -229,11 +283,11 @@ const employees = [
 const admin = [
   {
     id: 101,
+    firstName: "Rohit",
     email: "admin@example.com",
     password: "123"
   }
 ];
-
 
 export const setLocalStorage = ()=>{
     localStorage.setItem('employees', JSON.stringify(employees));

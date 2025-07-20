@@ -1,0 +1,55 @@
+import React from "react";
+
+const TaskList = ({ data }) => {
+  const bgColors = [
+    "bg-red-400",
+    "bg-blue-400",
+    "bg-green-400",
+    "bg-yellow-400",
+    "bg-purple-400",
+    "bg-pink-400",
+    "bg-indigo-400",
+    "bg-teal-400",
+  ];
+
+  const randomColor = () =>
+    bgColors[Math.floor(Math.random() * bgColors.length)];
+
+  return (
+    <div
+      id="tasklist"
+      className="h-70 flex-nowrap flex items-center justify-start gap-5 mt-10 py-5 overflow-x-auto"
+    >
+      {data.tasks.map((task, index) => {
+        const cardBg = randomColor(); // get a new random color for each task
+        return (
+          <div
+            key={index}
+            className={`flex-shrink-0 w-80 h-full ${cardBg} rounded-2xl`}
+          >
+            <div className="flex justify-between p-5">
+              <h3
+                className={`px-3 py-1 rounded-lg text-white ${
+                  task.priority === "high"
+                    ? "bg-red-600"
+                    : task.priority === "medium"
+                    ? "bg-yellow-600"
+                    : "bg-green-600"
+                }`}
+              >
+                {task.priority.charAt(0).toUpperCase() +
+                  task.priority.slice(1)}
+              </h3>
+
+              <h4 className="text-sm py-1.5">{task.date}</h4>
+            </div>
+            <h2 className="mt-3 text-xl px-3 font-semibold">{task.title}</h2>
+            <p className="text-sm px-3 mt-1">{task.description}</p>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+export default TaskList;

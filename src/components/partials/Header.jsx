@@ -1,12 +1,20 @@
 import React from "react";
 
-const Header = () => {
+const Header = ({data}) => {
+
+  const username = data?.firstName || "Admin";
+
+  const logOutUser =()=>{
+    localStorage.setItem('loggedInUser', '')
+    window.location.reload();
+  }
+  
   return (
     <div className="flex items-end justify-between">
       <h1 className="text-2xl font-medium">
-        Hello <br /> <span className="text-3xl font-semibold">Luffy ✋</span>
+          Hello <br /> <span className="text-3xl font-semibold">{username} ✋</span>
       </h1>
-      <button className="bg-red-500 text-lg font-medium text-white py-3 px-5 rounded-md">Log Out</button>
+      <button onClick={logOutUser} className="bg-red-500 text-lg font-medium text-white py-3 px-5 rounded-md">Log Out</button>
     </div>
   );
 };

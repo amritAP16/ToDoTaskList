@@ -1,0 +1,22 @@
+import React from 'react'
+
+const AcceptTask = () => {
+  return (
+     <div  className='flex-shrink-0 w-80 h-full bg-red-400 rounded-2xl'>
+            <div className='flex justify-between p-5'>
+                <h3 className='bg-red-600 px-3 py-1 rounded-lg'>High</h3>
+                <h4 className='text-sm py-1.5'>20 feb 2025</h4>
+            </div>
+            <h2 className='mt-3 text-xl px-3 font-semibold'>Complete Your HomeWork.</h2>
+            <p className='text-sm px-3 mt-1'>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, non minus magnam consequuntur soluta placeat culpa.
+            </p>
+            <div className='flex items-start justify-between p-4'>
+                <button className='bg-green-600 px-2 rounded-md text-sm'>Mark as Completed</button>
+                <button className='bg-red-600 px-2 rounded-md text-sm'>Mark as Failed</button>
+            </div>
+        </div>
+  )
+}
+
+export default AcceptTask
