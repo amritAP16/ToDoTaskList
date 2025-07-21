@@ -1,12 +1,12 @@
 import React from "react";
 
-const Header = ({data}) => {
+const Header = (props) => {
 
-  const username = data?.firstName || "Admin";
+  const username = props.data?.firstName || "Admin";
 
   const logOutUser =()=>{
     localStorage.setItem('loggedInUser', '')
-    window.location.reload();
+    props.changeUser('')
   }
   
   return (
