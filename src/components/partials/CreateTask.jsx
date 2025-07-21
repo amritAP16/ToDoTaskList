@@ -12,12 +12,22 @@ const CreateTask = () => {
   const [category, setCategory] = useState('');
   const [description,setDescription] = useState('');
   
-  const [newTask, setNewTask] = useState({})
+  
 
   const submitHandler = (e) =>{
     e.preventDefault();
 
-    setNewTask({title,date,priority,category,description,active:false,newTask:true,failed:false,completed:false})
+    const taskObj = {
+    title,
+    date,
+    priority,
+    category,
+    description,
+    active: false,
+    newTask: true,
+    failed: false,
+    completed: false,
+  };
 
     const data = userData.employees
     console.log(data);
@@ -25,12 +35,12 @@ const CreateTask = () => {
 
     data.forEach((elem)=>{
       if(taskAssignTo == elem.firstName){
-        elem.tasks.push(newTask)
+        elem.tasks.push(taskObj)
         elem.taskCounts.newTask = elem.taskCounts.newTask + 1;
       }
     })
 
-    setUserData
+    setUserData({...userData})
 
     setTitle('')
     setDate('')
